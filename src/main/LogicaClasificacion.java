@@ -18,12 +18,11 @@ public class LogicaClasificacion {
         Stack<String> pila = new Stack<>();
         // Hacemos una copia para no modificar la original
         Queue<String> copia = new LinkedList<>(cola);
-
-        for(int i=0; i<3; i++){
+        while (!copia.isEmpty()) {
             pila.push(copia.poll());
         }
         Queue<String> invertida = new LinkedList<>();
-        for(int i=0; i<3; i++){
+        while (!pila.isEmpty()) {
             invertida.add(pila.pop());
         }
         return invertida;
@@ -48,8 +47,8 @@ public class LogicaClasificacion {
             if (!lista.get(i).equals(lista.get(j))) {
                 return false;
             }
-            j--;
             i++;
+            j--;
         }
         return true;
     }
